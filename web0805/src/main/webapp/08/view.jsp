@@ -61,7 +61,7 @@ CommunityDTO dto = dao.getOne(Integer.parseInt(num));
         <div class="inner">
             <h1>자유게시판</h1>
             <div class="wrap">
-                <form method="post" action="write2.jsp">
+                <form method="post" action="write2.jsp?num=<%=dto.getNum() %>">
 
     <table style="border-collapse: separate; border-spacing: 10px;">
         <tr>
@@ -100,7 +100,7 @@ CommunityDTO dto = dao.getOne(Integer.parseInt(num));
     <%
     if(dto.getWriter().equals(username)){
     %>
-    <input type="button" value="수정" onclick="location.href='write2.jsp?num=<%=dto.getNum() %>'" style="width: 10%;
+    <input type="submit" value="수정" onclick="location.href='write2.jsp?num=<%=dto.getNum() %>'" style="width: 10%;
             padding: 10px;
             background-color: #333;
             color: #fff;
@@ -118,14 +118,14 @@ CommunityDTO dto = dao.getOne(Integer.parseInt(num));
     <%
     }else{
     %>
-    <input type="submit" value="수정" style="width: 10%;
+    <input type="button" value="수정" style="width: 10%;
             padding: 10px;
             background-color: #333;
             color: #fff;
             border: none;
             border-radius: 5px;
             cursor: pointer;"
-            onclick="alert('권한이 없습니다.');">
+            onclick="alert('권한이 없습니다.'); location.href='community_form.jsp'" >
     <input type="button" value="삭제" onclick="alert('권한이 없습니다.')" style="width: 10%;
             padding: 10px;
             background-color: #333;
@@ -137,6 +137,14 @@ CommunityDTO dto = dao.getOne(Integer.parseInt(num));
     <%
     }
     %>
+    <input type="button" value="목록으로" style="width: 10%;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;"
+            onclick="history.back()" >
 </form>
             </div>
         </div>

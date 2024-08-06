@@ -72,7 +72,7 @@ for(CommunityDTO dto : list){
 %>                
                 <tr>
                 <td align="center" style="width:10%; padding: 1px;
-                border-bottom: 1px solid #000000;"><a href="view.jsp?num=<%=dto.getNum()%>"><%=dto.getNum() %></td>
+                border-bottom: 1px solid #000000;"><%=dto.getNum() %></td>
                 <td align="center" style="width:20%; padding: 1px;
                 border-bottom: 1px solid #000000;"><%=dto.getWriter() %></td>
                 <td align="center" style="padding: 1px;
